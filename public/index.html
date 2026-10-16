@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifePlanner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>LifePlanner</h1>
+    <div class="view-tabs">
+      <button data-view="calendar" class="active">Calendar</button>
+      <button data-view="today">Today</button>
+      <button data-view="upcoming">Upcoming</button>
+      <button data-view="overdue">Overdue</button>
+      <button data-view="done">Done</button>
+      <button data-view="help">Needs help</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="calendar-view" class="view active">
+      <div class="cal-header">
+        <button id="prev-month">‹</button>
+        <h2 id="month-label"></h2>
+        <button id="next-month">›</button>
+        <button id="today-btn" class="ghost">Today</button>
+      </div>
+      <div class="weekdays">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+        <span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div id="calendar-grid"></div>
+    </section>
+
+    <section id="list-view" class="view"></section>
+  </main>
+
+  <div id="day-panel" class="panel hidden">
+    <div class="panel-head">
+      <h3 id="panel-date"></h3>
+      <button id="add-task-btn">+ Add task</button>
+      <button id="close-panel" class="ghost">✕</button>
+    </div>
+    <div id="panel-tasks"></div>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <h3 id="modal-title">Add task</h3>
+      <form id="task-form">
+        <input type="text" id="f-title" placeholder="What do you need to do?" required />
+        <input type="date" id="f-date" required />
+        <label class="field-label" for="f-deadline">Deadline (optional — reminds you daily until this date)</label>
+        <input type="date" id="f-deadline" />
+        <input type="time" id="f-time" />
+        <select id="f-type">
+          <option value="class">Class</option>
+          <option value="homework">Homework</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="spontaneous">Spontaneous</option>
+          <option value="appointment">Appointment</option>
+        </select>
+        <select id="f-repeat">
+          <option value="none">Once</option>
+          <option value="daily">Every day</option>
+          <option value="eod">Every other day</option>
+          <option value="weekly">Weekly (pick days)</option>
+        </select>
+        <div id="f-weekdays" class="weekdays-pick hidden">
+          <button type="button" data-wd="0">S</button>
+          <button type="button" data-wd="1">M</button>
+          <button type="button" data-wd="2">T</button>
+          <button type="button" data-wd="3">W</button>
+          <button type="button" data-wd="4">T</button>
+          <button type="button" data-wd="5">F</button>
+          <button type="button" data-wd="6">S</button>
+        </div>
+        <textarea id="f-notes" placeholder="Notes (optional)"></textarea>
+        <label class="checkline">
+          <input type="checkbox" id="f-help" />
+          <span>🤖 Need help with this</span>
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="f-cancel" class="ghost">Cancel</button>
+          <button type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

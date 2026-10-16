@@ -1,0 +1,11 @@
+# task + notification state (personal data, never published)
+data/
+notified.json
+
+# personal schedule seed
+seed.js
+
+# tooling noise
+node_modules/
+__pycache__/
+*.log

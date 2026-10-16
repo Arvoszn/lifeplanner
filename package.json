@@ -1,0 +1,25 @@
+{
+  "name": "lifeplanner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-first daily planner with recurring tasks, deadlines, and Windows toast reminders. Zero dependencies.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed-demo.js",
+    "desktop": "python desktop.py"
+  },
+  "keywords": [
+    "planner",
+    "local-first",
+    "calendar",
+    "reminders",
+    "windows-toast",
+    "zero-dependencies"
+  ],
+  "author": "Argelo Cumayas Nuñez (Spawntel)",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  }
+}
